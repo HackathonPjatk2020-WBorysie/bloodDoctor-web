@@ -11,8 +11,13 @@
                             <hr/>
 
                             <mdb-list-group class="mb-3">
-                                <mdb-list-group-item>
-                                    <h2 class="h5 flex-center my-0">Wykonane badania krwi:</h2>
+                                <mdb-list-group-item class="d-flex align-items-center justify-content-between">
+                                    <h2 class="h5 flex-center align-items-center justify-content-center my-0">
+                                        Wykonane badania krwi:
+                                    </h2>
+                                    <span class="red-text font-small" v-if="error">
+                                         WYMAGANE min. 1
+                                    </span>
                                 </mdb-list-group-item>
                                 <mdb-list-group-item>
                                     <div class="custom-control custom-checkbox">
@@ -54,7 +59,8 @@
         components: {Form},
         data(){
             return {
-                tests: []
+                tests: [],
+                error: false
             }
         },
         methods: {
@@ -68,9 +74,12 @@
                     this.$router.push('/form/'+this.$store.state.tests[0]);
                 }
                 else {
-                    alert("Nie podałeś wykonanych badań! Zaznacz choć jedno badanie.");
+                    this.error = true;
                 }
             }
+        },
+        beforeCreate() {
+            document.body.className = 'page-index';
         }
     }
 </script>

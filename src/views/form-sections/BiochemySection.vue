@@ -51,7 +51,7 @@
             formNextPage(){
                 this.$store.state.activePage++;
                 if(this.$store.state.activePage === this.$store.state.tests.length){
-                    this.$router.push('/camera');
+                    this.$router.push('/report');
                 }
                 else {
                     this.$router.push('/form/'+this.$store.state.tests[this.$store.state.activePage]);
@@ -70,6 +70,9 @@
                 this.$store.state.biochemy = this.biochemy;
                 console.log(this.biochemy);
             }
+        },
+        beforeCreate() {
+            document.body.className = 'page-form';
         }
     }
 </script>

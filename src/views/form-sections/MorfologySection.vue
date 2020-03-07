@@ -78,7 +78,7 @@
             formNextPage(){
                 this.$store.state.activePage++;
                 if(this.$store.state.activePage === this.$store.state.tests.length){
-                    this.$router.push('/camera');
+                    this.$router.push('/report');
                 }
                 else {
                     this.$router.push('/form/'+this.$store.state.tests[this.$store.state.activePage]);
@@ -97,6 +97,9 @@
                 this.$store.state.morfology = this.morfology;
                 console.log(this.morfology);
             }
+        },
+        beforeCreate() {
+            document.body.className = 'page-form';
         }
     }
 </script>

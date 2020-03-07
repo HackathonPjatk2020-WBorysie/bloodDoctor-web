@@ -17,7 +17,10 @@
 
 <script>
     export default {
-        name: "Form"
+        name: "Form",
+        beforeCreate() {
+            document.body.className = 'page-form';
+        }
     }
 </script>
 

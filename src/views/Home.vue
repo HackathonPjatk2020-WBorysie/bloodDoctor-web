@@ -6,6 +6,9 @@
                 <mdb-card class="p-4">
                     <mdb-card-body>
                         <home-form />
+                        <img src="../assets/img/bg-index.jpg" width="0" height="0" />
+                        <img src="../assets/img/bg-form.jpg" width="0" height="0" />
+                        <img src="../assets/img/bg-report.jpg" width="0" height="0" />
                     </mdb-card-body>
                 </mdb-card>
             </mdb-col>
@@ -19,6 +22,9 @@
 
     export default {
         name: 'Home',
-        components: {HomeForm}
+        components: {HomeForm},
+        beforeCreate() {
+            document.body.className = 'page-index';
+        }
     }
 </script>

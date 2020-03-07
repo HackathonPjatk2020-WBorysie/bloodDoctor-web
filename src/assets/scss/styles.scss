@@ -1,5 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 
+body {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: rgba(128,176,210,0.71);
+  @media screen and (min-width: 1200px) {
+    background-size: cover !important;
+    background-position: initial;
+  }
+}
+body.page-index {
+  background-image: url('../img/bg-index.jpg');
+}
+body.page-form {
+  background-image: url('../img/bg-form.jpg');
+}
+body.page-report {
+  background-image: url('../img/bg-report.jpg');
+}
+
 // removing default blue background from inputs when autofilling
 @-webkit-keyframes autofill {
   to {
