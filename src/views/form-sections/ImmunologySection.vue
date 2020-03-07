@@ -17,14 +17,25 @@
         <mdb-input type="text" label="fT4" outline />
         <mdb-input type="text" label="FT3" outline />
 
-        <router-link tag="mdb-btn" color="light-blue" to="/camera">Finalizuj</router-link>
+        <mdb-btn color="light-blue" @click="formNextPage()">Dalej</mdb-btn>
 
     </div>
 </template>
 
 <script>
     export default {
-        name: "ImmunologySection"
+        name: "ImmunologySection",
+        methods: {
+            formNextPage(){
+                this.$store.state.activePage++;
+                if(this.$store.state.activePage === this.$store.state.tests.length){
+                    this.$router.push('/camera');
+                }
+                else {
+                    this.$router.push('/form/'+this.$store.state.tests[this.$store.state.activePage]);
+                }
+            },
+        }
     }
 </script>
 

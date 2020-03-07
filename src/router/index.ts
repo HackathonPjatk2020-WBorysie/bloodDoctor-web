@@ -6,6 +6,7 @@ import Form from '../views/Form.vue'
   import MorfologySection from "@/views/form-sections/MorfologySection.vue";
   import BiochemySection from "@/views/form-sections/BiochemySection.vue";
   import ImmunologySection from "@/views/form-sections/ImmunologySection.vue";
+import ExaminationInterview from "@/views/ExaminationInterview.vue";
 
 Vue.use(VueRouter);
 
@@ -14,6 +15,11 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/interview',
+    name: 'Interview',
+    component: ExaminationInterview
   },
   {
     path: '/form',

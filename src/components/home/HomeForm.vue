@@ -7,10 +7,10 @@
         <mdb-input type="text" label="Twoje imie" outline />
 
         <div class="text-center mt-3">
-            <router-link to="/form/a" tag="mdb-btn">
+            <mdb-btn color="light-blue" @click="start()">
                 Zaczynajmy
                 <i class="ml-2 fas fa-chevron-right"></i>
-            </router-link>
+            </mdb-btn>
         </div>
 
 <!--        <hr/>-->
@@ -28,7 +28,18 @@
 
 <script>
     export default {
-        name: "HomeForm"
+        name: "HomeForm",
+        data(){
+            return {
+                name: ""
+            }
+        },
+        methods: {
+            start(){
+                this.$store.state.name = this.name;
+                this.$router.push('/interview')
+            }
+        }
     }
 </script>
 
