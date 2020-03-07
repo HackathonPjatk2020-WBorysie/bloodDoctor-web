@@ -1,5 +1,5 @@
 <template>
-    <form>
+    <form @submit.prevent="start()">
 
         <h1 class="flex-center my-0">BloodDoctor.io</h1>
         <hr/>
@@ -7,7 +7,7 @@
         <mdb-input type="text" label="Twoje imie" outline />
 
         <div class="text-center mt-3">
-            <mdb-btn color="light-blue" @click="start()">
+            <mdb-btn color="light-blue" type="submit">
                 Zaczynajmy
                 <i class="ml-2 fas fa-chevron-right"></i>
             </mdb-btn>

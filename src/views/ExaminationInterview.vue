@@ -34,7 +34,10 @@
                                 </mdb-list-group-item>
                             </mdb-list-group>
 
-                            <mdb-btn type="submit" color="light-blue">Dalej</mdb-btn>
+                            <div class="d-flex justify-content-between w-100">
+                                <mdb-btn outline="light-blue" @click="goToHome()">Wstecz</mdb-btn>
+                                <mdb-btn type="submit" color="light-blue">Dalej</mdb-btn>
+                            </div>
 
                         </form>
                     </mdb-card-body>
@@ -55,6 +58,9 @@
             }
         },
         methods: {
+            goToHome(){
+                this.$router.push('/');
+            },
             initiateForm(){
                 this.$store.state.tests = this.tests;
                 this.$store.state.activePage = 0;

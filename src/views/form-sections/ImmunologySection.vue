@@ -17,7 +17,10 @@
         <mdb-input type="text" label="fT4" outline />
         <mdb-input type="text" label="FT3" outline />
 
-        <mdb-btn color="light-blue" @click="formNextPage()">Dalej</mdb-btn>
+        <div class="flex-between">
+            <mdb-btn outline="light-blue" @click="formPrevPage()">Wstecz</mdb-btn>
+            <mdb-btn color="light-blue" @click="formNextPage()">Dalej</mdb-btn>
+        </div>
 
     </div>
 </template>
@@ -26,6 +29,15 @@
     export default {
         name: "ImmunologySection",
         methods: {
+            formPrevPage(){
+                if(this.$store.state.activePage !== 0){
+                    this.$store.state.activePage--;
+                    this.$router.push('/form/'+this.$store.state.tests[this.$store.state.activePage]);
+                }
+                else {
+                    this.$router.push('/interview');
+                }
+            },
             formNextPage(){
                 this.$store.state.activePage++;
                 if(this.$store.state.activePage === this.$store.state.tests.length){
