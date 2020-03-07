@@ -2,12 +2,10 @@
     <mdb-container class="my-5">
 
         <mdb-row>
-            <mdb-col col="col-11 col-lg-4" class="mx-auto">
-                <mdb-card>
+            <mdb-col col="col-11 col-lg-5" class="mx-auto">
+                <mdb-card class="p-4">
                     <mdb-card-body>
-                        <transition name="fade" mode="out-in">
-                            <home-form></home-form>
-                        </transition>
+                        <home-form></home-form>
                     </mdb-card-body>
                 </mdb-card>
             </mdb-col>

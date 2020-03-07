@@ -2,7 +2,7 @@
     <mdb-container class="my-5">
 
         <mdb-row>
-            <mdb-col col="col-11 col-lg-4" class="mx-auto">
+            <mdb-col col="col-11 col-lg-6" class="mx-auto">
                 <mdb-card>
                     <mdb-card-body>
                         <transition name="fade" mode="out-in">

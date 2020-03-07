@@ -1,5 +1,6 @@
 <template>
     <form>
+
         <h1 class="flex-center my-0">BloodDoctor.io</h1>
         <hr/>
 
@@ -15,10 +16,10 @@
 <!--        <hr/>-->
 <!--        <div class="d-flex justify-content-between">-->
 <!--            <a href="#" class="text-decoration-none">-->
-<!--                Nie pamiętasz hasła?-->
+<!--                Opcjonalna sekcja dodatkowa-->
 <!--            </a>-->
-<!--            <a href="#" class="text-decoration-none" @click="switchCard">-->
-<!--                Zarejestruj się-->
+<!--            <a href="#" class="text-decoration-none">-->
+<!--                Dodatkowy link-->
 <!--            </a>-->
 <!--        </div>-->
 
