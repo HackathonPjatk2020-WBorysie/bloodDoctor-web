@@ -5,11 +5,11 @@
         <hr/>
 
         <h2 class="h5 flex-center my-0">Immunologia</h2>
-        <mdb-input type="text" label="TSH" outline v-model="immunology.TSH_L69"/>
-        <mdb-input type="text" label="fT4" outline v-model="immunology.fT4_O69"/>
-        <mdb-input type="text" label="FT3" outline v-model="immunology.FT3_O55"/>
+        <ok-meter label="TSH" v-model="immunology.TSH_L69"/>
+        <ok-meter label="fT4" v-model="immunology.fT4_O69"/>
+        <ok-meter label="FT3" v-model="immunology.FT3_O55"/>
 
-        <div class="flex-between">
+        <div class="d-flex justify-content-between w-100 mt-1">
             <mdb-btn outline="light-blue" @click="formPrevPage()">Wstecz</mdb-btn>
             <mdb-btn color="light-blue" @click="sumbitImmunology()">Dalej</mdb-btn>
         </div>
@@ -18,14 +18,16 @@
 </template>
 
 <script>
+    import OkMeter from "@/components/okMeter";
     export default {
         name: "ImmunologySection",
+        components: {OkMeter},
         data() {
             return {
                 immunology: {
-                    TSH_L69: undefined,
-                    fT4_O69: undefined,
-                    FT3_O55: undefined
+                    TSH_L69: 0,
+                    fT4_O69: 0,
+                    FT3_O55: 0
                 }
             }
         },

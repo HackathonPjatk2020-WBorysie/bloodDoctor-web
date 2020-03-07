@@ -6,27 +6,27 @@
 
         <h2 class="h5 flex-center my-undefined">Morfologia</h2>
 
-        <mdb-input type="text" label="WBC" outline v-model="morfology.WBC" />
-        <mdb-input type="text" label="RBC" outline v-model="morfology.RBC" />
-        <mdb-input type="text" label="HGB" outline v-model="morfology.HGB" />
-        <mdb-input type="text" label="HCT" outline v-model="morfology.HCT" />
-        <mdb-input type="text" label="MCH" outline v-model="morfology.MCH" />
-        <mdb-input type="text" label="MCHC" outline v-model="morfology.MCHC" />
-        <mdb-input type="text" label="MCV" outline v-model="morfology.MCV" />
-        <mdb-input type="text" label="RDW-SD" outline v-model="morfology.RDW_SD" />
-        <mdb-input type="text" label="PLT" outline v-model="morfology.PLT" />
-        <mdb-input type="text" label="PDW" outline v-model="morfology.PDW" />
-        <mdb-input type="text" label="P-LCR" outline v-model="morfology.P_LCR" />
-        <mdb-input type="text" label="MPV" outline v-model="morfology.MPV" />
-        <mdb-input type="text" label="PCT" outline v-model="morfology.PCT" />
-        <mdb-input type="text" label="LYMP" outline v-model="morfology.LYMP" />
-        <mdb-input type="text" label="NEUT" outline v-model="morfology.NEUT" />
-        <mdb-input type="text" label="MONO" outline v-model="morfology.MONO" />
-        <mdb-input type="text" label="EOS" outline v-model="morfology.EOS" />
-        <mdb-input type="text" label="BASO" outline v-model="morfology.BASO" />
-        <mdb-input type="text" label="IG" outline v-model="morfology.IG" />
+        <ok-meter label="WBC" v-model="morfology.WBC" />
+        <ok-meter label="RBC" v-model="morfology.RBC" />
+        <ok-meter label="HGB" v-model="morfology.HGB" />
+        <ok-meter label="HCT" v-model="morfology.HCT" />
+        <ok-meter label="MCH" v-model="morfology.MCH" />
+        <ok-meter label="MCHC" v-model="morfology.MCHC" />
+        <ok-meter label="MCV" v-model="morfology.MCV" />
+        <ok-meter label="RDW-SD" v-model="morfology.RDW_SD" />
+        <ok-meter label="PLT" v-model="morfology.PLT" />
+        <ok-meter label="PDW" v-model="morfology.PDW" />
+        <ok-meter label="P-LCR" v-model="morfology.P_LCR" />
+        <ok-meter label="MPV" v-model="morfology.MPV" />
+        <ok-meter label="PCT" v-model="morfology.PCT" />
+        <ok-meter label="LYMP" v-model="morfology.LYMP" />
+        <ok-meter label="NEUT" v-model="morfology.NEUT" />
+        <ok-meter label="MONO" v-model="morfology.MONO" />
+        <ok-meter label="EOS" v-model="morfology.EOS" />
+        <ok-meter label="BASO" v-model="morfology.BASO" />
+        <ok-meter label="IG" v-model="morfology.IG" />
 
-        <div class="flex-between">
+        <div class="d-flex justify-content-between w-100 mt-1">
             <mdb-btn outline="light-blue" @click="formPrevPage()">Wstecz</mdb-btn>
             <mdb-btn color="light-blue" @click="submitMorfology()">Dalej</mdb-btn>
         </div>
@@ -36,30 +36,32 @@
 </template>
 
 <script>
+    import OkMeter from "@/components/okMeter";
     export default {
         name: "MorfologySection",
+        components: {OkMeter},
         data(){
             return {
                 morfology: {
-                    WBC: undefined,
-                    RBC: undefined,
-                    HGB: undefined,
-                    HCT: undefined,
-                    MCH: undefined,
-                    MCHC: undefined,
-                    MCV: undefined,
-                    RDW_SD: undefined,
-                    PLT: undefined,
-                    PDW: undefined,
-                    P_LCR: undefined,
-                    MPV: undefined,
-                    PCT: undefined,
-                    LYMP: undefined,
-                    NEUT: undefined,
-                    MONO: undefined,
-                    EOS: undefined,
-                    BASO: undefined,
-                    IG: undefined
+                    WBC: 0,
+                    RBC: 0,
+                    HGB: 0,
+                    HCT: 0,
+                    MCH: 0,
+                    MCHC: 0,
+                    MCV: 0,
+                    RDW_SD: 0,
+                    PLT: 0,
+                    PDW: 0,
+                    P_LCR: 0,
+                    MPV: 0,
+                    PCT: 0,
+                    LYMP: 0,
+                    NEUT: 0,
+                    MONO: 0,
+                    EOS: 0,
+                    BASO: 0,
+                    IG: 0
                 }
             }
         },

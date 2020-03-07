@@ -5,14 +5,15 @@
         <hr/>
 
         <h2 class="h5 flex-center my-0">Biochemia</h2>
-        <mdb-input type="text" label="CK M18" outline v-model="biochemy.CK_M18" />
-        <mdb-input type="text" label="Kreatynina Jaffe M37" outline v-model="biochemy.Creatinine_Jaffe_M37" />
-        <mdb-input type="text" label="GFR" outline v-model="biochemy.GFR" />
-        <mdb-input type="text" label="Glukoza" outline v-model="biochemy.Glucose_L43" />
-        <mdb-input type="text" label="Żelazo" outline v-model="biochemy.Iron_O95"/>
-        <mdb-input type="text" label="Potas" outline v-model="biochemy.Potasium_N45"/>
 
-        <div class="flex-between">
+        <ok-meter label="CK M18" v-model="biochemy.CK_M18" />
+        <ok-meter label="Kreatynina Jaffe M37" v-model="biochemy.Creatinine_Jaffe_M37" />
+        <ok-meter label="GFR" v-model="biochemy.GFR" />
+        <ok-meter label="Glukoza" v-model="biochemy.Glucose_L43" />
+        <ok-meter label="Żelazo" v-model="biochemy.Iron_O95" />
+        <ok-meter label="Potas" v-model="biochemy.Potasium_N45" />
+
+        <div class="d-flex justify-content-between w-100 mt-1">
             <mdb-btn outline="light-blue" @click="formPrevPage()">Wstecz</mdb-btn>
             <mdb-btn color="light-blue" @click="submitBiochemy()">Dalej</mdb-btn>
         </div>
@@ -21,17 +22,19 @@
 </template>
 
 <script>
+    import OkMeter from "@/components/okMeter";
     export default {
         name: "BiochemySection",
+        components: {OkMeter},
         data(){
             return {
                 biochemy: {
-                    CK_M18: undefined,
-                    Creatinine_Jaffe_M37: undefined,
-                    GFR: undefined,
-                    Glucose_L43: undefined,
-                    Iron_O95: undefined,
-                    Potasium_N45: undefined
+                    CK_M18: 0,
+                    Creatinine_Jaffe_M37: 0,
+                    GFR: 0,
+                    Glucose_L43: 0,
+                    Iron_O95: 0,
+                    Potasium_N45: 0
                 }
             }
         },
