@@ -62,9 +62,14 @@
                 this.$router.push('/');
             },
             initiateForm(){
-                this.$store.state.tests = this.tests;
-                this.$store.state.activePage = 0;
-                this.$router.push('/form/'+this.$store.state.tests[0]);
+                if(this.tests.length > 0){
+                    this.$store.state.tests = this.tests;
+                    this.$store.state.activePage = 0;
+                    this.$router.push('/form/'+this.$store.state.tests[0]);
+                }
+                else {
+                    alert("Nie podałeś wykonanych badań! Zaznacz choć jedno badanie.");
+                }
             }
         }
     }

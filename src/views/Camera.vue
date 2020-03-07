@@ -1,6 +1,11 @@
 <template>
     <mdb-container class="my-5">
 
+        <mdb-row class="mb-3">
+            <mdb-btn outline="primary" @click="resetApp" class="ml-auto bg-white">
+                Wykonaj inne badanie
+            </mdb-btn>
+        </mdb-row>
         <mdb-row>
             <mdb-col col="col-11 col-lg-4" class="mx-auto">
                 <mdb-card>
@@ -17,7 +22,7 @@
                                     <mdb-list-group-item>
                                         <b>Pacjent: {{ BloodTest.name }}</b>
                                     </mdb-list-group-item>
-                                    <mdb-list-group-item v-if="BloodTest.Morfology !== null">
+                                    <mdb-list-group-item v-if="BloodTest.Morfology !== null" class="patient-cell">
                                         <p>Morfologia:</p>
                                         <ul>
                                             <li v-for="(value, key) of BloodTest.Morfology">
@@ -25,7 +30,7 @@
                                             </li>
                                         </ul>
                                     </mdb-list-group-item>
-                                    <mdb-list-group-item v-if="BloodTest.Biochemy !== null">
+                                    <mdb-list-group-item v-if="BloodTest.Biochemy !== null" class="patient-cell">
                                         <p>Biochemia:</p>
                                         <ul>
                                             <li v-for="(value, key) of BloodTest.Biochemy">
@@ -33,7 +38,7 @@
                                             </li>
                                         </ul>
                                     </mdb-list-group-item>
-                                    <mdb-list-group-item v-if="BloodTest.Immunology !== null">
+                                    <mdb-list-group-item v-if="BloodTest.Immunology !== null" class="patient-cell">
                                         <p>Immunologia:</p>
                                         <ul>
                                             <li v-for="(value, key) of BloodTest.Immunology">
@@ -42,9 +47,6 @@
                                         </ul>
                                     </mdb-list-group-item>
                                 </mdb-list-group>
-                                <mdb-btn outline="primary" @click="resetApp">
-                                    Od początku
-                                </mdb-btn>
                             </div>
 
                         </div>
@@ -112,7 +114,7 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     .spinner-pos {
         position: fixed;
         top: 50vh;
@@ -125,5 +127,14 @@
         justify-content: center;
         align-items: center;
         text-align: center;
+    }
+    .patient-cell {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+        ul {
+            list-style-type: square !important;
+        }
     }
 </style>
