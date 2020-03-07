@@ -92,6 +92,7 @@
               return true;
             },
             uploadMorfology(){
+                this.$store.state.morfology = this.morfology;
                 console.log(this.morfology);
             }
         }

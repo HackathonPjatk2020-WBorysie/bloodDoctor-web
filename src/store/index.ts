@@ -7,7 +7,10 @@ export default new Vuex.Store({
   state: {
     name: "",
     tests: [],
-    activePage: 0
+    activePage: 0,
+    morfology: null,
+    immunology: null,
+    biochemy: null
   },
   mutations: {
   },

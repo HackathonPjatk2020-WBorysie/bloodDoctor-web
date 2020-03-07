@@ -4,7 +4,7 @@
         <h1 class="flex-center my-0">BloodDoctor.io</h1>
         <hr/>
 
-        <mdb-input type="text" label="Twoje imie" outline />
+        <mdb-input type="text" label="Twoje imie" outline v-model="name"/>
 
         <div class="text-center mt-3">
             <mdb-btn color="light-blue" type="submit">
