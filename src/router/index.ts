@@ -3,9 +3,9 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Camera from '../views/Camera.vue'
 import Form from '../views/Form.vue'
-  import FirstSection from '../views/form-sections/FirstSection.vue'
-  import SecondSection from '../views/form-sections/SecondSection.vue'
-  import ThirdSection from '../views/form-sections/ThirdSection.vue'
+  import MorfologySection from "@/views/form-sections/MorfologySection.vue";
+  import BiochemySection from "@/views/form-sections/BiochemySection.vue";
+  import ImmunologySection from "@/views/form-sections/ImmunologySection.vue";
 
 Vue.use(VueRouter);
 
@@ -20,9 +20,9 @@ const routes = [
     name: 'Form',
     component: Form,
     children: [
-      { path: 'a', component: FirstSection },
-      { path: 'b', component: SecondSection },
-      { path: 'c', component: ThirdSection }
+      { path: 'morfology', component: MorfologySection },
+      { path: 'biochemy', component: BiochemySection },
+      { path: 'immunology', component: ImmunologySection }
     ]
   },
   {

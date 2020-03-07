@@ -24,7 +24,7 @@
 
 <script>
     export default {
-        name: "ThirdSection"
+        name: "ImmunologySection"
     }
 </script>
 
