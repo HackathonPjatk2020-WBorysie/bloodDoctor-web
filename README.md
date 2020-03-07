@@ -1,19 +1,22 @@
-# hackathon
+# BloodDoctor.io
+##### Hackathon PJATK 2020
 
-## Project setup
-```
-npm install
-```
+---
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### Funkcjonalności:
+- analiza składu krwi
+- dobieranie produktów spożywczych
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### Grupa w składzie:
+- Jakub Kulaszewicz
+- Paweł Benkowski
+- Wiktor Maj
+- Filip Dobrzyniewicz
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Instalacja i uruchamianie
+```npm install``` - instlacja zależności które są wymagane do projektu
+
+```npm run dev``` - włączenie środowiska deweloperskiego na porcie 8080
+
+```npm run build``` - zbudowanie aplikacji do wersji produkcyjnej 
