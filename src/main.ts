@@ -14,7 +14,11 @@ for (const component in mdbvue) {
   Vue.component(component, mdbvue[component])
 }
 
-Vue.config.productionTip = false
+// VueResource
+import VueResource from 'vue-resource';
+Vue.use(VueResource);
+
+Vue.config.productionTip = false;
 
 new Vue({
   router,
