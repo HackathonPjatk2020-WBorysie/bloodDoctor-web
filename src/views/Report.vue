@@ -10,10 +10,10 @@
 
         <div class="mb-3 d-flex justify-content-end w-100" v-if="!loading">
             <router-link to="/camera" tag="mdb-btn" color="primary" class="bg-white">
-                <i class="fas fa-camera" />
+                Analiza wideo produktów <i class="ml-2 fas fa-camera" />
             </router-link>
             <mdb-btn color="primary" @click="resetApp" class="bg-white">
-                Wykonaj inne badanie
+                Wykonaj inne badanie <i class="ml-2 fas fa-reply" />
             </mdb-btn>
         </div>
         <mdb-row v-if="!loading">
