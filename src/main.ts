@@ -18,6 +18,7 @@ for (const component in mdbvue) {
 import VueResource from 'vue-resource';
 Vue.use(VueResource);
 
+
 Vue.config.productionTip = false;
 
 new Vue({

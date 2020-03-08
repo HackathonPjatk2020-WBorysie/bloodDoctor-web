@@ -9,9 +9,9 @@
         </div>
 
         <div class="mb-3 d-flex justify-content-end w-100" v-if="!loading">
-            <mdb-btn color="primary" @click="resetApp" class="bg-white">
-                <i class="fas fa-camera"></i>
-            </mdb-btn>
+            <router-link to="/camera" tag="mdb-btn" color="primary" class="bg-white">
+                <i class="fas fa-camera" />
+            </router-link>
             <mdb-btn color="primary" @click="resetApp" class="bg-white">
                 Wykonaj inne badanie
             </mdb-btn>
