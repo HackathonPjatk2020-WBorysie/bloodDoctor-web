@@ -9,9 +9,11 @@
         <ok-meter label="fT4" v-model="immunology.fT4_O69"/>
         <ok-meter label="FT3" v-model="immunology.FT3_O55"/>
 
-        <div class="d-flex justify-content-between w-100 mt-1">
-            <mdb-btn outline="light-blue" @click="formPrevPage()">Wstecz</mdb-btn>
-            <mdb-btn color="light-blue" @click="sumbitImmunology()">Dalej</mdb-btn>
+        <hr/>
+
+        <div class="d-flex justify-content-between w-100 mt-2">
+            <mdb-btn outline="primary" @click="formPrevPage()">Wstecz</mdb-btn>
+            <mdb-btn color="primary" @click="sumbitImmunology()">Dalej</mdb-btn>
         </div>
 
     </div>

@@ -35,3 +35,13 @@ input:-webkit-autofill {
   animation-name: autofill;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both; }
+
+
+@media screen and (max-width: 991px){
+  .card-body:not(.exclude-min-height) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 97vh !important;
+  }
+}

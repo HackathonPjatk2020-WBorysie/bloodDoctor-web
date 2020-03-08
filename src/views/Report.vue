@@ -1,97 +1,93 @@
 <template>
-    <mdb-container class="my-5">
+    <div>
 
-        <div v-if="loading" class="spinner-pos">
+        <mdb-card-body v-if="loading" class="spinner-pos">
             <div class="spinner-grow text-danger" role="status" style="width: 5rem; height: 5rem">
                 <span class="sr-only">Loading...</span>
             </div>
             <div>Wiktor przygotowuje dla Ciebie analizę...</div>
-        </div>
+        </mdb-card-body>
 
-        <mdb-row class="d-flex justify-content-end w-100" v-if="!loading">
-            <mdb-col col="col-12 col-lg-7">
-                <mdb-card class="border border-bottom-0 rounded-0">
-                    <mdb-card-body class="d-flex flex-column flex-lg-row justify-content-around p-2">
-                        <router-link to="/camera" tag="mdb-btn" color="primary" class="bg-white">
-                            Analiza wideo produktów <i class="ml-2 fas fa-camera" />
-                        </router-link>
-                        <mdb-btn color="primary" @click="resetApp" class="bg-white">
-                            Wykonaj inne badanie <i class="ml-2 fas fa-reply" />
-                        </mdb-btn>
-                    </mdb-card-body>
-                </mdb-card>
-            </mdb-col>
-        </mdb-row>
+        <mdb-card-body
+                class="d-flex flex-column flex-lg-row justify-content-around pb-0 pt-2 px-4 exclude-min-height"
+                v-if="!loading"
+        >
+            <router-link to="/camera" tag="mdb-btn" color="primary" class="bg-white">
+                Analiza wideo produktów <i class="ml-2 fas fa-camera"/>
+            </router-link>
+            <mdb-btn color="primary" @click="resetApp" class="bg-white">
+                Wykonaj inne badanie <i class="ml-2 fas fa-reply"/>
+            </mdb-btn>
+        </mdb-card-body>
 
-        <mdb-row v-if="!loading">
-            <mdb-col col="col-11 col-lg-4" class="mx-auto">
-                <mdb-card>
-                    <mdb-card-body>
-                        <div>
-                            <div>
-                                <mdb-list-group>
-                                    <mdb-list-group-item>
-                                        <b>Pacjent: {{ BloodTest.name }}</b>
-                                    </mdb-list-group-item>
-                                    <mdb-list-group-item v-if="BloodTest.Morfology !== null" class="patient-cell">
-                                        <p>Morfologia:</p>
-                                        <ul>
-                                            <li v-for="(value, key) of BloodTest.Morfology">
-                                                <b>{{ key }}:</b> {{ value === 1 ? "Powyżej normy" : value === -1 ? "Poniżej normy" : "W normie" }}
-                                            </li>
-                                        </ul>
-                                    </mdb-list-group-item>
-                                    <mdb-list-group-item v-if="BloodTest.Biochemy !== null" class="patient-cell">
-                                        <p>Biochemia:</p>
-                                        <ul>
-                                            <li v-for="(value, key) of BloodTest.Biochemy">
-                                                <b>{{ key }}:</b> {{ value === 1 ? "Powyżej normy" : value === -1 ? "Poniżej normy" : "W normie" }}
-                                            </li>
-                                        </ul>
-                                    </mdb-list-group-item>
-                                    <mdb-list-group-item v-if="BloodTest.Immunology !== null" class="patient-cell">
-                                        <p>Immunologia:</p>
-                                        <ul>
-                                            <li v-for="(value, key) of BloodTest.Immunology">
-                                                <b>{{ key }}:</b> {{ value === 1 ? "Powyżej normy" : value === -1 ? "Poniżej normy" : "W normie" }}
-                                            </li>
-                                        </ul>
-                                    </mdb-list-group-item>
-                                </mdb-list-group>
-                            </div>
+        <mdb-card-body v-if="!loading" class="pt-0">
+            <div>
+                <hr />
 
-                        </div>
-                    </mdb-card-body>
-                </mdb-card>
-            </mdb-col>
-            <mdb-col col="col-11 col-lg-8" class="mx-auto">
-                <mdb-card>
-                    <mdb-card-body>
-                        <div>
-                            <h3>Tych produktów powinieneś unikać:</h3>
+                <h3>Tych produktów powinieneś unikać:</h3>
 
+                <ul>
+                    <li v-for="(value, key) in unsuggested">
+                        <span class="red-text">{{ value }}</span>
+                    </li>
+                </ul>
+
+                <hr class="my-3"/>
+
+                <h3>Te produkty powinieneś częściej spożywać:</h3>
+
+                <ul>
+                    <li v-for="(value, key) in suggested">
+                        <span class="green-text">{{ value }}</span>
+                    </li>
+                </ul>
+
+                <hr />
+            </div>
+        </mdb-card-body>
+
+        <mdb-card-body v-if="!loading">
+            <div>
+                <div>
+                    <mdb-list-group>
+                        <mdb-list-group-item>
+                            <b>Pacjent: {{ BloodTest.name }}</b>
+                        </mdb-list-group-item>
+                        <mdb-list-group-item v-if="BloodTest.Morfology !== null" class="patient-cell">
+                            <p>Morfologia:</p>
                             <ul>
-                                <li v-for="(value, key) in unsuggested">
-                                    <span class="red-text">{{ value }}</span>
+                                <li v-for="(value, key) of BloodTest.Morfology">
+                                    <b>{{ key }}:</b> {{ value === 1 ? "Powyżej normy" : value === -1 ? "Poniżej normy"
+                                    : "W normie" }}
                                 </li>
                             </ul>
-
-                            <hr class="my-3" />
-
-                            <h3>Te produkty powinieneś częściej spożywać:</h3>
-
+                        </mdb-list-group-item>
+                        <mdb-list-group-item v-if="BloodTest.Biochemy !== null" class="patient-cell">
+                            <p>Biochemia:</p>
                             <ul>
-                                <li v-for="(value, key) in suggested">
-                                    <span class="green-text">{{ value }}</span>
+                                <li v-for="(value, key) of BloodTest.Biochemy">
+                                    <b>{{ key }}:</b> {{ value === 1 ? "Powyżej normy" : value === -1 ? "Poniżej normy"
+                                    : "W normie" }}
                                 </li>
                             </ul>
-                        </div>
-                    </mdb-card-body>
-                </mdb-card>
-            </mdb-col>
-        </mdb-row>
+                        </mdb-list-group-item>
+                        <mdb-list-group-item v-if="BloodTest.Immunology !== null" class="patient-cell">
+                            <p>Immunologia:</p>
+                            <ul>
+                                <li v-for="(value, key) of BloodTest.Immunology">
+                                    <b>{{ key }}:</b> {{ value === 1 ? "Powyżej normy" : value === -1 ? "Poniżej normy"
+                                    : "W normie" }}
+                                </li>
+                            </ul>
+                        </mdb-list-group-item>
+                    </mdb-list-group>
+                </div>
 
-    </mdb-container>
+            </div>
+        </mdb-card-body>
+
+
+    </div>
 </template>
 
 <script>
@@ -99,7 +95,7 @@
 
     export default {
         name: "Camera",
-        data(){
+        data() {
             return {
                 BloodTest: new BloodTest(
                     this.$store.state.name,
@@ -113,7 +109,7 @@
             }
         },
         methods: {
-            resetApp(){
+            resetApp() {
                 this.$store.state.name = "";
                 this.$store.state.tests = [];
                 this.$store.state.activePage = 0;
@@ -122,11 +118,11 @@
                 this.$store.state.immunology = null;
                 this.$router.push('/');
             },
-            async sendData(){
+            async sendData() {
                 let url = 'https://blood-doctor-be.herokuapp.com/bloodTest';
                 let body = this.BloodTest;
                 let headers = {
-                  'Content-Type': 'application/json'
+                    'Content-Type': 'application/json'
                 };
                 return await this.$http.post(url, body, {headers});
             }
@@ -145,7 +141,8 @@
                     });
                 },
                 error => {
-
+                    alert("Błąd wczytywania danych analizy!");
+                    // this.$router.push('/');
                 }
             );
         },
@@ -169,12 +166,14 @@
         align-items: center;
         text-align: center;
     }
+
     .patient-cell {
         display: flex;
         flex-direction: column;
         justify-content: flex-start !important;
         align-items: flex-start !important;
     }
+
     ul {
         list-style-type: square !important;
     }

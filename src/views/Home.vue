@@ -1,20 +1,10 @@
 <template>
-    <mdb-container class="my-5">
-
-        <mdb-row>
-            <mdb-col col="col-11 col-lg-5" class="mx-auto">
-                <mdb-card class="p-4">
-                    <mdb-card-body>
-                        <home-form />
-                        <img src="../assets/img/bg-index.jpg" width="0" height="0" />
-                        <img src="../assets/img/bg-form.jpg" width="0" height="0" />
-                        <img src="../assets/img/bg-report.jpg" width="0" height="0" />
-                    </mdb-card-body>
-                </mdb-card>
-            </mdb-col>
-        </mdb-row>
-
-    </mdb-container>
+    <mdb-card-body>
+        <home-form />
+        <img src="../assets/img/bg-index.jpg" width="0" height="0" />
+        <img src="../assets/img/bg-form.jpg" width="0" height="0" />
+        <img src="../assets/img/bg-report.jpg" width="0" height="0" />
+    </mdb-card-body>
 </template>
 
 <script>

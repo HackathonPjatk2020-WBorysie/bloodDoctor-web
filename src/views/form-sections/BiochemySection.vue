@@ -13,9 +13,11 @@
         <ok-meter label="Żelazo" v-model="biochemy.Iron_O95" desc="Ilość żelaza w krwi"/>
         <ok-meter label="Potas" v-model="biochemy.Potasium_N45" desc="Ilość potasu we krwi"/>
 
-        <div class="d-flex justify-content-between w-100 mt-1">
-            <mdb-btn outline="light-blue" @click="formPrevPage()">Wstecz</mdb-btn>
-            <mdb-btn color="light-blue" @click="submitBiochemy()">Dalej</mdb-btn>
+        <hr/>
+
+        <div class="d-flex justify-content-between w-100 mt-2">
+            <mdb-btn outline="primary" @click="formPrevPage()">Wstecz</mdb-btn>
+            <mdb-btn color="primary" @click="submitBiochemy()">Dalej</mdb-btn>
         </div>
 
     </div>

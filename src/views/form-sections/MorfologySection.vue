@@ -26,9 +26,11 @@
         <ok-meter label="BASO" v-model="morfology.BASO" desc="Procentowa norma bazofilów" />
         <ok-meter label="IG" v-model="morfology.IG" />
 
-        <div class="d-flex justify-content-between w-100 mt-1">
-            <mdb-btn outline="light-blue" @click="formPrevPage()">Wstecz</mdb-btn>
-            <mdb-btn color="light-blue" @click="submitMorfology()">Dalej</mdb-btn>
+        <hr/>
+
+        <div class="d-flex justify-content-between w-100 mt-2">
+            <mdb-btn outline="primary" @click="formPrevPage()">Wstecz</mdb-btn>
+            <mdb-btn color="primary" @click="submitMorfology()">Dalej</mdb-btn>
         </div>
 
 

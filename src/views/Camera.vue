@@ -1,33 +1,32 @@
 <template>
-    <mdb-container class="my-5">
-        <mdb-row>
-            <mdb-col col="col-11 col-lg-7" class="mx-auto">
-                <mdb-card>
-                    <mdb-card-body>
-                        <mdb-col col="col-12" class="mb-3 d-flex justify-content-between align-items-center">
-                            <mdb-btn @click="$router.go(-1)" color="primary" class="bg-white" size="sm">
-                                <i class="mr-2 fas fa-chevron-left" /> Powrót
-                            </mdb-btn>
-                            <select class="browser-default custom-select col-6" v-model="deviceId">
-                                <option :value="device.deviceId" v-for="(device, index) in cameras" :selected="!index">
-                                    {{ device.label.substring(0, device.label.indexOf('(')) }}
-                                </option>
-                            </select>
-                        </mdb-col>
-                        <hr />
-                        <mdb-col col="col-8" class="mx-auto d-flex justify-content-center">
-                            <web-cam
-                                width="400" height="300"
-                                @cameras="captureVideo($event)"
-                                :device-id="deviceId"
-                                controls
-                            />
-                        </mdb-col>
-                    </mdb-card-body>
-                </mdb-card>
-            </mdb-col>
-        </mdb-row>
-    </mdb-container>
+
+    <mdb-card-body>
+        <mdb-col col="col-12" class="mb-3 d-flex justify-content-between align-items-center">
+            <mdb-row>
+                <mdb-col col="col-11 col-lg-6 my-2">
+                    <mdb-btn @click="$router.go(-1)" color="primary" class="bg-white" size="block">
+                        <i class="mr-2 fas fa-chevron-left"/> Powrót
+                    </mdb-btn>
+                </mdb-col>
+                <mdb-col col="col-11 col-lg-6">
+                    <select class="browser-default custom-select w-100" v-model="deviceId">
+                        <option :value="device.deviceId" v-for="(device, index) in cameras" :selected="!index">
+                            {{ device.label.substring(0, device.label.indexOf('(')) }}
+                        </option>
+                    </select>
+                </mdb-col>
+            </mdb-row>
+        </mdb-col>
+        <hr/>
+        <mdb-col col="col-8" class="mx-auto d-flex justify-content-center">
+            <web-cam
+                    height="100%"
+                    @cameras="captureVideo($event)"
+                    :device-id="deviceId"
+                    controls
+            />
+        </mdb-col>
+    </mdb-card-body>
 </template>
 
 <script>
@@ -35,8 +34,8 @@
 
     export default {
         name: "Camera",
-        components: { WebCam },
-        data () {
+        components: {WebCam},
+        data() {
             return {
                 photo: null,
                 cameras: [],
@@ -44,7 +43,7 @@
             };
         },
         methods: {
-            captureVideo($event){
+            captureVideo($event) {
                 this.cameras = $event;
                 this.deviceId = this.cameras[0].deviceId;
             }
