@@ -10,7 +10,7 @@
                             </mdb-btn>
                             <select class="browser-default custom-select col-6" v-model="deviceId">
                                 <option :value="device.deviceId" v-for="(device, index) in cameras" :selected="!index">
-                                    {{ device.label }}
+                                    {{ device.label.substring(0, device.label.indexOf('(')) }}
                                 </option>
                             </select>
                         </mdb-col>
@@ -20,6 +20,7 @@
                                 width="400" height="300"
                                 @cameras="captureVideo($event)"
                                 :device-id="deviceId"
+                                controls
                             />
                         </mdb-col>
                     </mdb-card-body>
