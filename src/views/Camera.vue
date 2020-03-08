@@ -59,5 +59,12 @@
 </script>
 
 <style scoped>
-
+    video::-webkit-media-controls-play-button,
+    video::-webkit-media-controls-pausebutton,
+    video::-webkit-media-controls-volume-slider,
+    video::-webkit-media-controls-timeline,
+    video::-webkit-media-controls-current-time-display,
+    video::-webkit-media-controls-mute-button {
+        display: none;
+    }
 </style>
