@@ -9,9 +9,9 @@
         <ok-meter label="CK M18" v-model="biochemy.CK_M18" />
         <ok-meter label="Kreatynina Jaffe M37" v-model="biochemy.Creatinine_Jaffe_M37" />
         <ok-meter label="GFR" v-model="biochemy.GFR" />
-        <ok-meter label="Glukoza" v-model="biochemy.Glucose_L43" />
-        <ok-meter label="Żelazo" v-model="biochemy.Iron_O95" />
-        <ok-meter label="Potas" v-model="biochemy.Potasium_N45" />
+        <ok-meter label="Glukoza" v-model="biochemy.Glucose_L43" desc="Ilość cukru (glukozy) we krwi"/>
+        <ok-meter label="Żelazo" v-model="biochemy.Iron_O95" desc="Ilość żelaza w krwi"/>
+        <ok-meter label="Potas" v-model="biochemy.Potasium_N45" desc="Ilość potasu we krwi"/>
 
         <div class="d-flex justify-content-between w-100 mt-1">
             <mdb-btn outline="light-blue" @click="formPrevPage()">Wstecz</mdb-btn>

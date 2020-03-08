@@ -1,29 +1,29 @@
 <template>
     <div>
 
-        <h1 class="flex-center my-undefined">BloodDoctor.io</h1>
+        <h1 class="flex-center my-0">BloodDoctor.io</h1>
         <hr/>
 
-        <h2 class="h5 flex-center my-undefined">Morfologia</h2>
+        <h2 class="h5 flex-center my-0">Morfologia</h2>
 
-        <ok-meter label="WBC" v-model="morfology.WBC" />
-        <ok-meter label="RBC" v-model="morfology.RBC" />
-        <ok-meter label="HGB" v-model="morfology.HGB" />
-        <ok-meter label="HCT" v-model="morfology.HCT" />
-        <ok-meter label="MCH" v-model="morfology.MCH" />
-        <ok-meter label="MCHC" v-model="morfology.MCHC" />
-        <ok-meter label="MCV" v-model="morfology.MCV" />
-        <ok-meter label="RDW-SD" v-model="morfology.RDW_SD" />
-        <ok-meter label="PLT" v-model="morfology.PLT" />
+        <ok-meter label="WBC" v-model="morfology.WBC" desc="Liczba krwinek białych"/>
+        <ok-meter label="RBC" v-model="morfology.RBC" desc="Liczba krwinek czerwonych" />
+        <ok-meter label="HGB" v-model="morfology.HGB" desc="Stężenie hemoglobiny"/>
+        <ok-meter label="HCT" v-model="morfology.HCT" desc="Stosunek objętości erytrocytów do objętości całej krwi"/>
+        <ok-meter label="MCH" v-model="morfology.MCH" desc="Wskaźnik średniej masy hemoglobiny w krwince czerwonej"/>
+        <ok-meter label="MCHC" v-model="morfology.MCHC" desc="Wskaźnik średniego stężenia hemoglobiny w jednostkowej objętości krwinek czerwonych"/>
+        <ok-meter label="MCV" v-model="morfology.MCV" desc="Średnia objętość krwinek czerwonych" />
+        <ok-meter label="RDW-SD" v-model="morfology.RDW_SD" desc="Rozkład objętości krwinek czerwonych"/>
+        <ok-meter label="PLT" v-model="morfology.PLT" desc="Wskaźnik ilości płytek krwi na mm sześcienny krwi"/>
         <ok-meter label="PDW" v-model="morfology.PDW" />
         <ok-meter label="P-LCR" v-model="morfology.P_LCR" />
         <ok-meter label="MPV" v-model="morfology.MPV" />
         <ok-meter label="PCT" v-model="morfology.PCT" />
-        <ok-meter label="LYMP" v-model="morfology.LYMP" />
-        <ok-meter label="NEUT" v-model="morfology.NEUT" />
-        <ok-meter label="MONO" v-model="morfology.MONO" />
-        <ok-meter label="EOS" v-model="morfology.EOS" />
-        <ok-meter label="BASO" v-model="morfology.BASO" />
+        <ok-meter label="LYMP" v-model="morfology.LYMP" desc="Procentowa norma limfocytów" />
+        <ok-meter label="NEUT" v-model="morfology.NEUT" desc="Procentowa norma neutrofilów" />
+        <ok-meter label="MONO" v-model="morfology.MONO" desc="Procentowa norma monocytów" />
+        <ok-meter label="EOS" v-model="morfology.EOS" desc="Procentowa norma eozynofilów" />
+        <ok-meter label="BASO" v-model="morfology.BASO" desc="Procentowa norma bazofilów" />
         <ok-meter label="IG" v-model="morfology.IG" />
 
         <div class="d-flex justify-content-between w-100 mt-1">

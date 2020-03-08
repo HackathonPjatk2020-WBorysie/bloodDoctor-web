@@ -9,9 +9,9 @@
         </div>
 
         <mdb-row class="d-flex justify-content-end w-100" v-if="!loading">
-            <mdb-col col="7">
+            <mdb-col col="col-12 col-lg-7">
                 <mdb-card class="border border-bottom-0 rounded-0">
-                    <mdb-card-body class="d-flex justify-content-around p-2">
+                    <mdb-card-body class="d-flex flex-column flex-lg-row justify-content-around p-2">
                         <router-link to="/camera" tag="mdb-btn" color="primary" class="bg-white">
                             Analiza wideo produktów <i class="ml-2 fas fa-camera" />
                         </router-link>
